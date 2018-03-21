@@ -48,7 +48,7 @@
   ],
   "license": "MIT",
   "main": "dist/Vue2CoverImage.js",
-  "name": "Vue2CoverImage",
+  "name": "vue2-cover-image",
   "peerDependencies": {},
   "repository": {
     "type": "git",
