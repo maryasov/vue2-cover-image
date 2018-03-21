@@ -9,8 +9,9 @@ This way you can resize your images, stretch or crop them to fill the required a
 
 Also supports loading animation while image is loading and it can extract YouTube thumbnails from YouTube URLs too!
 
-See index.html for examples 
+One side benefit: Now nobody can right click on your images and save them (since they are rendered as backgrounds).
 
+See index.html for examples 
  
 ## Install
 
@@ -29,7 +30,7 @@ Then in your template:
 ```
 <div>
 ...
-<vue2-cover-image></vue2-cover-image>
+<vue2-cover-image src="image-url"></vue2-cover-image>
 ...
 </div>
 ```
