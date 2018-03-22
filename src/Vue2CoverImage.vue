@@ -13,19 +13,17 @@
             src: {
                 immediate: true,
                 handler() {
-                    let app = this;
-                    setTimeout(() => app.load(), 0);
+                    setTimeout(() => this.load(), 0);
                 }
             }
         },
         methods: {
             load() {
-                let app = this;
                 let img = new Image();
-                img.src = /youtube\.com/i.test(app.src) ? youtubeThumbnail(app.src).high.url : app.src;
-                img.onload = () => app.path = img.src;
-                img.onerror = () => app.path = app.error;
-                app.path = app.loading;
+                img.src = /youtube\.com/i.test(this.src) ? youtubeThumbnail(this.src).high.url : this.src;
+                img.onload = () => this.path = img.src;
+                img.onerror = () => this.path = this.error;
+                this.path = this.loading;
             },
             text(txt) {
                 let d = document.createElement( 'div' );
