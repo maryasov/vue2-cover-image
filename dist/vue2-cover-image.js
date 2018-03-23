@@ -56,7 +56,27 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
-	module.exports = __webpack_require__(7);
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _Vue2CoverImage = __webpack_require__(7);
+	
+	var _Vue2CoverImage2 = _interopRequireDefault(_Vue2CoverImage);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var vue2coverimage = { Vue2CoverImage: _Vue2CoverImage2.default };
+	
+	vue2coverimage.install = function (Vue) {
+	    Vue.component('vue2-cover-image', _Vue2CoverImage2.default);
+	};
+	
+	if (typeof window !== 'undefined' && window.Vue) {
+	    window.Vue.use(vue2coverimage);
+	}
+	
+	exports.default = vue2coverimage;
 
 /***/ }),
 /* 1 */
@@ -132,7 +152,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".bg-image[data-v-4e6c9008]{position:relative;display:inline-block;background-size:cover;background-repeat:no-repeat;background-position:50%}.bg-image .translucent[data-v-4e6c9008]{background:rgba(0,0,0,.4);color:#fff}.bg-image .blurb[data-v-4e6c9008]{position:absolute;left:0;right:0;bottom:0;white-space:nowrap;overflow:hidden;text-align:center;text-overflow:ellipsis}", ""]);
+	exports.push([module.id, ".bg-image[data-v-7b1f25e1]{position:relative;display:inline-block;background-size:cover;background-repeat:no-repeat;background-position:50%}.bg-image .translucent[data-v-7b1f25e1]{background:rgba(0,0,0,.4);color:#fff}.bg-image .blurb[data-v-7b1f25e1]{position:absolute;left:0;right:0;bottom:0;white-space:nowrap;overflow:hidden;text-align:center;text-overflow:ellipsis}", ""]);
 	
 	// exports
 
@@ -264,7 +284,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  /* template */
 	  __webpack_require__(9),
 	  /* scopeId */
-	  "data-v-4e6c9008",
+	  "data-v-7b1f25e1",
 	  /* cssModules */
 	  null
 	)
@@ -362,7 +382,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(11)("5cf81249", content, true);
+	var update = __webpack_require__(11)("c7405908", content, true);
 
 /***/ }),
 /* 11 */

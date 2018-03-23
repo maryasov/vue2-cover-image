@@ -33,9 +33,9 @@
         },
         data() {
             return {
-                path: require('./img/loading.gif'),
-                error: require('./img/img-error.png'),
-                loading: require('./img/loading.gif'),
+                path: require('../img/loading.gif'),
+                error: require('../img/img-error.png'),
+                loading: require('../img/loading.gif'),
             }
         }
     }

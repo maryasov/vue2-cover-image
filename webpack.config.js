@@ -58,8 +58,8 @@ module.exports = {
     },
 
     devServer: {
-        notify: false,
-        inline: true
+        historyApiFallback: true,
+        noInfo: true
     },
     devtool: '#eval-source-map'
 }

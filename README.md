@@ -1,18 +1,6 @@
 # Vue2CoverImage
-> Cover Image Component for Vue 2.x
+> Vue2CoverImage Component for Vue 2.x
 
-Display your images as a DIV's background instead of \<img\> tag. 
-
-![Screenshot](https://i.imgur.com/ytEJy1Z.jpg)
-
-This way you can resize your images, stretch or crop them to fill the required area using `background-size` css property.
-
-Also supports loading animation while image is loading and it can extract YouTube thumbnails from YouTube URLs too!
-
-One side benefit: Now nobody can right click on your images and save them (since they are rendered as backgrounds).
-
-See index.html for examples 
- 
 ## Install
 
 ``` bash
@@ -20,17 +8,32 @@ See index.html for examples
 ```
 
 ## Usage
-Require the component (globally or in another component)
+
+*1\. Import the component*
+
+```
+import Vue2CoverImage from 'vue2-cover-image';
+```
+
+*2\.1 Use it globally*
+
+```
+Vue.use(Vue2CoverImage);
+```
+
+*2\.2 Or use it locally*
+
 ```
 components: {
-    'vue2-cover-image': require('Vue2CoverImage')
+    'vue2-cover-image': Vue2CoverImage.Vue2CoverImage
 },
 ```
-Then in your template:
+
+*3\. Update your app or template:*
 ```
 <div>
 ...
-<vue2-cover-image src="image-url"></vue2-cover-image>
+<vue2-cover-image></vue2-cover-image>
 ...
 </div>
 ```

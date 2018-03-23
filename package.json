@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/san-kumar/vue2-cover-image/issues"
   },
-  "description": "Cover Image Component: Display your images as div background",
+  "description": "Vue2CoverImage Component",
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-helper-vue-jsx-merge-props": "^2.0.2",
@@ -17,7 +17,6 @@
     "babel-plugin-transform-vue-jsx": "^3.2.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-stage-0": "^6.16.0",
-    "babel-preset-stage-2": "^6.24.1",
     "babel-runtime": "^6.18.0",
     "bootstrap-loader": "^1.3.1",
     "bootstrap-sass": "^3.3.7",
@@ -27,7 +26,6 @@
     "file-loader": "^0.9.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
-    "node-sass": "^3.13.0",
     "resolve-url-loader": "^1.6.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
@@ -44,11 +42,12 @@
   "keywords": [
     "vue2",
     "Vue2CoverImage",
+    "vue2-cover-image",
     "vue-component",
     "vue2-Vue2CoverImage"
   ],
   "license": "MIT",
-  "main": "dist/Vue2CoverImage.js",
+  "main": "dist/vue2-cover-image.js",
   "name": "vue2-cover-image",
   "peerDependencies": {},
   "repository": {
@@ -59,7 +58,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config  webpack.config.build.min.js && cross-env NODE_ENV=production webpack --progress --hide-modules --config  webpack.config.build.js && cross-env NODE_ENV=production webpack --progress --hide-modules --config  webpack.config.js",
     "dev": "webpack-dev-server --inline --hot"
   },
-  "version": "0.0.5",
+  "version": "0.1.0",
   "dependencies": {
     "youtube-thumbnail": "^1.3.0"
   }
