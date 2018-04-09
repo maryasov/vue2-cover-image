@@ -32,6 +32,7 @@ module.exports = {
             amd: 'jquery',
             root: 'jQuery'
         },
+        'youtube-thumbnail': 'youtubeThumbnail'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
