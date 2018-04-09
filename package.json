@@ -1,6 +1,6 @@
 {
   "name": "vue2-cover-image",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Vue2CoverImage: Vue2 component",
   "main": "dist/vue2-cover-image.js",
   "unpkg": "dist/vue2-cover-image.min.js",

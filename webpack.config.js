@@ -31,8 +31,7 @@ module.exports = {
             commonjs2: 'jquery',
             amd: 'jquery',
             root: 'jQuery'
-        },
-        'youtube-thumbnail': 'youtubeThumbnail'
+        }
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
