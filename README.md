@@ -25,7 +25,7 @@ Vue.use(Vue2CoverImage);
 
 ```
 components: {
-    'vue2-cover-image': Vue2CoverImage.Vue2CoverImage
+    'vue2-cover-image': Vue2CoverImage
 },
 ```
 

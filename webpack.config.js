@@ -1,79 +1,74 @@
-var path = require('path')
-var webpack = require('webpack')
+'use strict';
+
+const webpack = require('webpack');
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 
 module.exports = {
-    entry: {
-        example: ['./src/example.js'],
-    },
-
-    output: {
-        path: './dist',
-        publicPath: '/dist/',
-        filename: "[name].js",
-    },
-
-
+    context: __dirname,
     resolve: {
-        root: path.join(__dirname, 'node_modules'),
-        alias: {},
-        extensions: ['', '.js', '.vue', '.json'],
+        modules: [
+            path.resolve(__dirname, 'src'),
+            'node_modules'
+        ],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+        },
+        extensions: ['.js', '.json', '.vue']
     },
-
+    entry: './src/index.js',
+    // Don't include these into library build
+    externals: {
+        'vue': {
+            commonjs: 'vue',
+            commonjs2: 'vue',
+            amd: 'vue',
+            root: 'Vue'
+        },
+        'jquery': {
+            commonjs: 'jquery',
+            commonjs2: 'jquery',
+            amd: 'jquery',
+            root: 'jQuery'
+        },
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'vue2-cover-image.min.js',
+        library: 'Vue2CoverImage',
+        libraryTarget: 'umd',
+        umdNamedDefine: true,
+    },
     module: {
-        loaders: [{
-            test: /\.vue$/,
-            loader: 'vue'
-        }, {
-            test: /\.js$/,
-            loader: 'babel',
-            exclude: /node_modules/
-        }, {
-            test: /\.json$/,
-            loader: 'json'
-        }, {
-            test: /\.html$/,
-            loader: 'vue-html'
-        }, {
-            test: /\.(png|jpg|gif|svg)$/,
-            loader: 'url',
-            query: {
-                limit: 10000,
-                name: '[name].[ext]?[hash]'
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                exclude: path.resolve(__dirname, 'node_modules'),
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: path.resolve(__dirname, 'node_modules'),
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                loader: 'url',
+                query: {
+                    limit: 10000,
+                    name: '[name].[ext]?[hash]'
+                }
             }
-        }, {
-            test: /\.less$/,
-            loader: "style!css!less"
-        }, {
-            test: /\.(woff2?|svg)$/,
-            loader: 'url-loader?limit=10000'
-        }, {
-            test: /\.(ttf|eot)$/,
-            loader: 'file-loader'
-        }, ]
+        ]
     },
-
-    babel: {
-        presets: ['es2015', 'stage-0'],
-        plugins: ['transform-runtime', 'transform-vue-jsx'],
-    },
-
-    devServer: {
-        historyApiFallback: true,
-        noInfo: true
-    },
-    devtool: '#eval-source-map'
-}
-
-if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map'
-        // http://vuejs.github.io/vue-loader/workflow/production.html
-    module.exports.plugins = (module.exports.plugins || []).concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
-
-        new webpack.optimize.OccurenceOrderPlugin()
-    ])
-}
+    plugins: [
+        new CleanWebpackPlugin(['./dist']),
+        new UnminifiedWebpackPlugin(),
+        new webpack.optimize.ModuleConcatenationPlugin(),
+    ],
+    devtool: false,
+    performance: {
+        hints: false,
+    }
+};

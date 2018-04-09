@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>
-        Vue2CoverImage
-    </title>
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-
-<body style="padding: 20px;">
-<div class="container">
-    <div id="app">
+<template>
+    <div>
         <vue2-cover-image src="http://www.deelay.me/10000/https://i.ytimg.com/vi/SfBR9aGrk9k/maxresdefault.jpg" caption="Slow loading image" width="200px" height="130px" class="thumbnail"></vue2-cover-image>
 
         <vue2-cover-image src="http://www.example.com/error.jpg" caption="Missing image" width="200px" height="130px" class="thumbnail"></vue2-cover-image>
@@ -26,12 +13,22 @@
         </vue2-cover-image>
 
         <a href="//google.com">
-            <vue2-cover-image src="http://sayquotable.com/images/quotes-images/4-quote-about-no-caption-needed-image-white-background.jpg" width="200px" height="130px" class="thumbnail"></vue2-cover-image>
+            <vue2-cover-image src="https://i.imgur.com/IzxYzQO.jpg" width="200px" height="130px" class="thumbnail"></vue2-cover-image>
         </a>
-
     </div>
-</div>
-<script src="./dist/example.js"></script>
-</body>
+</template>
 
-</html>
+<script>
+    import Vue2CoverImage from '../src/index';
+
+    export default {
+        name: 'app',
+        data() {
+            return {}
+        },
+        components: {
+            Vue2CoverImage
+        },
+        methods: {},
+    }
+</script>
